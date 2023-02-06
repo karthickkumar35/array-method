@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Method Table</title>
+<style>
+		*{
+			text-align:center;
+		}
+		h1{
+			background-color:lightblue;
+			color:blue;
+			padding:10px
+		}
+		table th{
+			color:#fff;
+			background-color:#bf00ff;
+		}
+		tr:nth-child(even){
+		    background-color:#D6EEEE;
+		}
+		.trr{
+			position:sticky;
+			top:0;
+		}
+	</style>
+</head>
+<body>
+    <h1>Array method table</h1>
+	<table border="1" class="center" cellpadding="10" cellspacing="0" align="center" width="95%">
+		<tr class="trr">
+			<th>METHOD( ) NAME</th>
+			<th>DESCRIPTION</th>
+            <th>EXAMPLE</th>
+            <th>INPUT</th>
+            <th>OUTPUT</th>
+        </tr>
+		<tr>
+			<td>concat</td>
+			<td>The concat() method joins two or more strings.
+				The concat() method does not change the existing strings.
+				The concat() method returns a new string.
+				</td>
+            <td>let text1 = "Hello";
+				let text2 = "world!";
+				let result = text1.concat(text2);
+				document.write(result);</td>			
+			<td>let text1 = "HII";
+				let text2 = "welcome all";
+				let result = text1.concat(text2);
+				document.write(result);</td>
+			<td>HII welcome all</td>
+        </tr>
+		<tr>
+			<td>constructor</td>
+			<td>The constructor() method is a special method for creating and initializing objects created within a class.
+			A class cannot have more than one constructor() method. This will throw a SyntaxError.
+				</td>
+            <td>class Car {
+				  constructor(brand) {
+					this.carName = brand;
+				  }
+				}
+
+				myCar = new Car("Ford");
+				document.write( "My car is a " + myCar.carName);</td>			
+			<td>class Car {
+				  constructor(brand) {
+					this.carName = brand;
+				  }
+				}
+
+				myCar = new Car("audi");
+				document.write( "My car is a " + myCar.carName);</td>
+			<td>My car is a audi</td>
+        </tr>
+		<tr>
+			<td>entries</td>
+			<td>The entries() method returns an Array Iterator object with key/value pairs:
+				The entries() method does not change the original array.</td>
+			<td>const vel = ["car", "bus", "van", "bike"];
+				const f = vel.entries();
+
+				for (let x of f) {
+				  document.write(x + "<br>");
+				}</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				const f = fruits.entries();
+
+				for (let x of f) {
+				  document.write(x + "<br>");
+				}</td>
+			<td>0,Banana
+				1,Orange
+				2,Apple
+				3,Mango</td>
+		</tr>
+		<tr>
+			<td>every</td>
+			<td>The every() method executes a function for each array element.
+				The every() method returns true if the function returns true for all elements.
+				The every() method returns false if the function returns false for one element.</td>
+			<td>const ages = [45, 13, 36, 37];
+				document.write( ages.every(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>const ages = [32, 33, 16, 40];
+				document.write( ages.every(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>filter</td>
+			<td>The filter() method creates a new array filled with elements that pass a test provided by a function.
+				The filter() method does not execute the function for empty elements.
+				The filter() method does not change the original array.</td>
+			<td>const ages = [43, 13, 36, 45];
+			document.write(ages.filter(checkAdult));
+			function checkAdult(age) {
+			  return age >= 18;
+			}</td>
+			<td>const ages = [32, 33, 16, 40];
+			document.write(ages.filter(checkAdult));
+			function checkAdult(age) {
+			  return age >= 18;
+			}</td>
+			<td>32,33,40</td>
+		</tr>
+		<tr>
+			<td>find</td>
+			<td>The find() method returns the value of the first element that passes a test.
+				The find() method executes a function for each array element.
+				The find() method returns undefined if no elements are found.
+				The find() method does not execute the function for empty elements.</td>
+			<td>const ages = [32, 20, 8, 34];
+				document.write( ages.find(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>const ages = [3, 10, 18, 20];
+				document.write( ages.find(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>findIndex</td>
+			<td>The findIndex() method executes a function for each array element.
+				The findIndex() method returns the index (position) of the first element that passes a test.
+				The findIndex() method returns -1 if no match is found.
+				The findIndex() method does not execute the function for empty array elements.</td>
+			<td>const ages = [32, 1, 14, 34];
+				document.write( ages.findIndex(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>const ages = [3, 10, 18, 20];
+				document.write( ages.findIndex(checkAge));
+				function checkAge(age) {
+				  return age > 18;
+				}</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>findLast</td>
+			<td>The findLast() method iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function. If no elements satisfy the testing function, undefined is returned.</td>
+			<td>const array1 = [57, 2, 12, 120, 24];
+				const found = array1.findLast((element) => element > 45);
+				console.log(found);</td>
+			<td>const array1 = [5, 12, 50, 130, 44];
+				const found = array1.findLast((element) => element > 45);
+				console.log(found);</td>
+			<td>130</td>
+		</tr>
+		<tr>
+			<td>findLastIndex</td>
+			<td>The findLastIndex() method is an iterative method. It calls a provided callbackFn function once for each element in an array in descending-index order, until callbackFn returns a truthy value.</td>
+			<td>const array1 = [51, 2, 23, 134, 54];
+				const isLargeNumber = (element) => element > 45;
+				console.log(array1.findLastIndex(isLargeNumber));</td>
+			<td>const array1 = [5, 12, 50, 130, 44];
+				const isLargeNumber = (element) => element > 45;
+				console.log(array1.findLastIndex(isLargeNumber));</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>forEach</td>
+			<td>The forEach() method calls a function for each element in an array.
+				The forEach() method is not executed for empty elements.</td>
+			<td>let text = "";
+				const thing = ["bed", "chair", "pillow"];
+				thing.forEach(myFunction);
+
+				document.write( text);
+				 
+				function myFunction(item, index) {
+				  text += index + ": " + item + "<br>"; 
+				}</td>
+			<td>let text = "";
+				const fruits = ["apple", "orange", "cherry"];
+				fruits.forEach(myFunction);
+
+				document.write( text);
+				 
+				function myFunction(item, index) {
+				  text += index + ": " + item + "<br>"; 
+				}</td>
+			<td>0: apple
+				1: orange
+				2: cherry</td>
+		</tr>
+		<tr>
+			<td>IndexOf</td>
+			<td>The indexOf() method returns the position of the first occurrence of a value in a string.
+				The indexOf() method returns -1 if the value is not found.
+				The indexOf() method is case sensitive.</td>
+			<td>let text = "Hello world, welcome to the universe.";
+				document.write(text.indexOf("e", 5));</td>
+			<td>let text = "Hello world, welcome to the universe.";
+				document.write(text.indexOf("e", 5));</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td>lastIndexOf</td>
+			<td>The lastIndexOf() method returns the index (position) of the last occurrence of a specified value in a string.
+				The lastIndexOf() method searches the string from the end to the beginning.
+				The lastIndexOf() method returns the index from the beginning (position 0).
+				The lastIndexOf() method returns -1 if the value is not found.</td>
+			<td>let text = "Hello planet earth, you are a great planet.";
+				let result = text.lastIndexOf("planet");
+				document.write(result);</td>
+			<td>let text = "Hello planet earth, you are a great planet.";
+				let result = text.lastIndexOf("planet");
+				document.write(result);</td>
+			<td>36</td>
+		</tr>
+		<tr>
+			<td>map</td>
+			<td>map() creates a new array from calling a function for every array element.
+				map() calls a function once for each element in an array.
+				map() does not execute the function for empty elements.</td>
+			<td>const numbers = [65, 44, 12, 4];
+				const newArr = numbers.map(myFunction);
+				document.write(newArr);
+				function myFunction(num) {
+				  return num * 10;
+				}</td>
+			<td>const numbers = [65, 44, 12, 4];
+				const newArr = numbers.map(myFunction);
+				document.write(newArr);
+				function myFunction(num) {
+				  return num * 10;
+				}</td>
+			<td>650,440,120,40</td>
+		</tr>
+		<tr>
+			<td>push</td>
+			<td>The push() method adds new items to the end of an array.
+				The push() method changes the length of the array.
+				The push() method returns the new length.</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.push("Kiwi", "Lemon");
+				document.write(fruits);</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.push("Kiwi", "Lemon");
+				document.write(fruits);</td>
+			<td>Banana,Orange,Apple,Mango,Kiwi,Lemon</td>
+		</tr>
+		<tr>
+			<td>pop</td>
+			<td>The pop() method removes (pops) the last element of an array.
+				The pop() method changes the original array.
+				The pop() method returns the removed element.</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				let removed = fruits.pop();
+				document.write(removed);
+				</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				let removed = fruits.pop();
+				document.write(removed);</td>
+			<td>Mango</td>
+		</tr>
+		<tr>
+			<td>reduce</td>
+			<td>The reduce() method executes a reducer function for array element.
+				The reduce() method returns a single value: the function's accumulated result.
+				The reduce() method does not execute the function for empty array elements.</td>
+			<td>const numbers = [145, 34, 45];
+				document.write(numbers.reduce(myFunc));
+				function myFunc(total, num) {
+				  return total - num;
+				}</td>
+			<td>const numbers = [175, 50, 25];
+				document.write(numbers.reduce(myFunc));
+				function myFunc(total, num) {
+				  return total - num;
+				}</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>reverse</td>
+			<td>The reverse() method reverses the order of the elements in an array.
+				The reverse() method overwrites the original array.
+				</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				document.write(fruits.reverse());</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				document.write(fruits.reverse());</td>
+			<td>Mango,Apple,Orange,Banana</td>
+		</tr>
+		<tr>
+			<td>shift</td>
+			<td>The shift() method removes the first item of an array.
+			The shift() method changes the original array.
+			The shift() method returns the shifted element.</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				document.write(fruits.shift());</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				document.write(fruits.shift());</td>
+			<td>orange,apple,mango</td>
+		</tr>
+		<tr>
+			<td>slice</td>
+			<td>The slice() method returns selected elements in an array, as a new array.
+				The slice() method selects from a given start, up to a (not inclusive) given end.
+				The slice() method does not change the original array.</td>
+			<td>const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+				const myBest = fruits.slice(-3, -1);
+				document.write(myBest);</td>
+			<td>const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+				const myBest = fruits.slice(-3, -1);
+				document.write(myBest);</td>
+			<td>Lemon,Apple</td>
+		</tr>
+		<tr>
+			<td>sort</td>
+			<td>By default, the sort() function sorts values as strings.
+				This works well for strings ("Apple" comes before "Banana").
+				However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+				Because of this, the sort() method will produce incorrect result when sorting numbers.</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.sort();
+				document.write(fruits);</td>
+			<td>onst fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.sort();
+				document.write(fruits);</td>
+			<td>Apple,Banana,Mango,Orange</td>
+		</tr>
+		<tr>
+			<td>splice</td>
+			<td>The splice() method adds and/or removes array elements.
+				The splice() method overwrites the original array.
+			</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+				fruits.splice(2, 2);
+				document.write(fruits);</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+				fruits.splice(2, 2);
+				document.write(fruits);</td>
+			<td>Banana,Orange,Kiwi</td>
+		</tr>
+		<tr>
+			<td>toLocalestring</td>
+			<td>The toLocaleString() method returns a Date object as a string, using locale settings.
+				The default language depends on the locale setup on your computer.
+			</td>
+			<td>const d = new Date();
+				let text = d.toLocaleString();
+				document.write(text);
+				</td>
+			<td>const d = new Date();
+				let text = d.toLocaleString();
+				document.write(text);</td>
+			<td>2/2/2023, 5:46:30 PM</td>
+		</tr>
+		<tr>
+			<td>tostring</td>
+			<td>The toString() method returns a string as a string.
+				The toString() method does not change the original string.=
+				The toString() method can be used to convert a string object into a string.</td>
+			<td>let text = "Hello World!";
+				let result = text;
+				document.write(result); </td>
+			<td>let text = "Hello World!";
+				let result = text;
+				document.write(result);</td>
+			<td>Hello World!</td>
+		</tr>
+		<tr>
+			<td>unshift</td>
+			<td>The unshift() method adds new elements to the beginning of an array.
+				The unshift() method overwrites the original array.</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.unshift("Lemon", "Pineapple");
+				document.write(fruits);</td>
+			<td>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+				fruits.unshift("Lemon", "Pineapple");
+				document.write(fruits);</td>
+			<td>Lemon,Pineapple,Banana,Orange,Apple,Mango</td>
+		</tr>
+	</table>	
+</body>
+</html>
